@@ -1,15 +1,18 @@
-titan:
-  build: titan
-  links:
-    - "cassandra:cassandra"
-    - "elastic:elasticsearch"
-  ports:
-    - "8182:8182"
+version: '2'
 
-cassandra:
-  build: cassandra
+services:
+  titan:
+    build: titan
+    links:
+      - "cassandra:cassandra"
+      - "elastic:elasticsearch"
+    ports:
+      - "8182:8182"
 
-elastic:
-  build: elastic
-  ports:
-    - "9200:9200"
+  cassandra:
+    build: cassandra
+
+  elastic:
+    build: elastic
+    ports:
+      - "9200:9200"
